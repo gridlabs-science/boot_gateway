@@ -1,4 +1,4 @@
-name: Build DATUM Gateway
+name: Build BOOT Gateway
 
 on:
     schedule:
@@ -146,7 +146,7 @@ jobs:
             cd build
             cmake /workspace -DCMAKE_C_FLAGS='-Wall -Werror' ${{ matrix.config.cmake_args }}
             make -j\$(nproc)
-            ./datum_gateway --help
+            ./boot_gateway --help
             ${CLEANUP_CMD}
           "
           docker run \

@@ -1,10 +1,10 @@
 execute_process(
-	COMMAND ${DATUM_GATEWAY} --example-conf
+	COMMAND ${BOOT_GATEWAY} --example-conf
 	OUTPUT_VARIABLE CURRENT_EXAMPLE
 	RESULT_VARIABLE _result
 )
 if (_result)
-	message(FATAL_ERROR "${DATUM_GATEWAY} exited with code ${_result}")
+	message(FATAL_ERROR "${BOOT_GATEWAY} exited with code ${_result}")
 endif()
 file(WRITE ${GENERATED_DOC} ${CURRENT_EXAMPLE})
 file(READ ${PREGEN_DOC} PREGEN_EXAMPLE)
